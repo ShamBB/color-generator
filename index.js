@@ -3,7 +3,6 @@ const favcolorEl = document.getElementById("favcolor");
 const schemeColor = document.getElementById("scheme-color");
 const loaderEl = document.getElementById("loader");
 const listColor = document.getElementById("list-color");
-const afterStyles = window.getComputedStyle(listColor, "::after");
 
 getColorList(favcolorEl.value, schemeColor.value);
 
