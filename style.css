@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  background-color: #1c1c1c;
+  color: #111827;
+}
+
+/* ===== typography ===== */
+
+.btn,
+.color-code,
+.color-bar {
+  font-size: 0.75rem;
+}
+
+/* ===== layout ===== */
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.main-grid,
+.input-section {
+  background-color: white;
+  max-width: 550px;
+  width: 80%;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.input-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 23px 15px;
+  /* flex-wrap: wrap; */
+  gap: 12px;
+}
+
+.list-color {
+  position: relative;
+}
+
+.color-bar {
+  height: 324px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.color-bar::before,
+.color-bar::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  background-color: rgb(17, 24, 39, 0.5);
+  color: white;
+  text-align: center;
+  border-radius: 0px 3px 0px 0px;
+  padding: 0.25em;
+  transform: translateY(100%);
+  transition: all 0.2s;
+}
+
+.color-bar::after {
+  content: attr(data-code-color);
+}
+
+.color-bar::before {
+  content: "Copied";
+}
+
+.color-bar-transform::before {
+  transform: translateY(0);
+}
+
+.color-bar-transform::after {
+  opacity: 0;
+}
+
+.color-bar:hover::after {
+  transform: translateY(0);
+}
+
+.color-code {
+  display: flex;
+  justify-content: center;
+}
+
+/* ==== input style ==== */
+
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 4px;
+  background-color: rgb(229, 229, 229);
+  height: 42px;
+  width: 61px;
+  border: 1px solid #d1d5db;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border: none;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  padding: 0;
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 10px red;
+  border: 0;
+  box-shadow: none;
+  flex: 1;
+  /* Personalize */
+  padding: 9px 37px 9px 14px;
+  background-color: white;
+  background-image: none;
+  cursor: pointer;
+
+  /* white-space: break-spaces; */
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--gray-300, #d1d5db);
+  box-shadow: 0px 0px 1px #d1d5db;
+  max-width: 312px;
+  width: 100%;
+}
+
+.select::after {
+  height: 100%;
+  content: "";
+  background: url(./Icon.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px 7px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 37px;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+
+/* ==== button ==== */
+
+.btn {
+  padding: 13px 11px;
+  width: 123px;
+  background-color: white;
+  border: 1px solid var(--gray-300, #d1d5db);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ==== loading spinner ==== */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  /* display: inline-block; */
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  animation: rotation 1s linear infinite;
+  z-index: 1;
+  /* display: none; */
+}
+
+/* ==== for backdrop when loading ==== */
+.list-color::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.show-after::after {
+  display: block;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
