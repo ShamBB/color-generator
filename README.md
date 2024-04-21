@@ -26,3 +26,5 @@ This project was created using the following technologies:
 - Choose a color harmony rule from the options provided.
 - Click the "Get Color Scheme" button to generate a color scheme.
 - View the generated color scheme consisting of five colors.
+  
+![Screenshot 2024-04-21 175626](https://github.com/ShamBB/color-generator/assets/26355647/ae3dc725-a162-4aa1-bc12-0f14f4b82044)
