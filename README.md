@@ -2,8 +2,11 @@
  
 Color Scheme Generator
 This project is a color scheme generator that allows users to create custom color schemes by selecting colors from a color picker and applying different color harmony rules. The user has the option to choose from various color harmony rules such as monochrome, monochrome dark, monochrome light, analogic, complement, and analogic complement. When the user clicks the "Get Color Scheme" button, the application generates a color scheme consisting of five colors based on the selected color and harmony rule. User can then hover the color and click to copy it.
+<br />
 
-Features
+Live Website : https://color-picker-viera.netlify.app/
+
+# Features
 - Select colors from a color picker.
 - Choose from different color harmony rules.
 - Generate color schemes with five colors.
